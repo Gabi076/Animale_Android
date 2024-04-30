@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/animalListFragment">
+
+    <fragment
+        android:id="@+id/animalListFragment"
+        android:name="com.example.animale.fragments.AnimalListFragment"
+        android:label="AnimalListFragment" >
+
+        <action
+            android:id="@+id/action_animalListFragment_to_animalInfoFragment"
+            app:destination="@id/animalInfoFragment">
+
+            <!-- Move arguments inside the action tag -->
+            <argument
+                android:name="animalName"
+                app:argType="string" />
+
+            <argument
+                android:name="animalContinent"
+                app:argType="string" />
+
+            <argument
+                android:name="continentColor"
+                app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/animalInfoFragment"
+        android:name="com.example.animale.fragments.AnimalInfoFragment"
+        android:label="AnimalInfoFragment" />
+</navigation>
